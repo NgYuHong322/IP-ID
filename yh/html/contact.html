@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/contact.js" defer></script>
+    <script src="../js/app.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.10/lottie.min.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="icon" href="../resources/icon/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../resources/icon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../resources/icon/favicon-32x32.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../resources/icon/favicon-16x16.ico">
+
+    <!-- For Android devices -->
+    <link rel="icon" type="image/png" sizes="192x192" href="../resources/icon/android-chrome-192x192.ico">
+    <link rel="icon" type="image/png" sizes="512x512" href="../resources/icon/android-chrome-512x512.ico">
+
+    <!-- For Apple devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../resources/icon/apple-touch-icon.ico">
+    <title>Contact Us</title>
+
+</head>
+
+<body class="font-sans bg-white dark:bg-black min-h-screen flex flex-col justify-between">
+
+    <nav id="nav" class="maintxt fixed w-full z-50 bg-white dark:bg-black" data-aos="fade-up" data-aos-duration="1000">
+        <div class="hidden md:flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x- rtl:space-x-reverse cursor-pointer">
+                <img src="../resources/navbar/Sky Studios.png" class="h-8 ml-3 mr-4" alt="Sky Studios Logo" />
+                <span class="self-center text-3xl font-semibold text-black whitespace-nowrap dark:text-white">Sky
+                    Studios</span>
+            </a>
+
+            <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+                <ul class="flex flex-col relative items-center justify-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md">
+                    <li>
+                        <a href="home.html"
+                            class="block py-2 px-3 text-gray-900 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 "
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover"
+                            data-dropdown-trigger="hover"
+                            class="flex items-center justify-between w-full py-2 px-3 md:text-black rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent md:hover:cursor-pointer"
+                            type="button">Features <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <div id="dropdownHover" class="block z-10 hidden bg-transparent divide-y divide-gray rounded-lg shadow md:w-44 md:dark:bg-gray">
+                            <ul class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                                <li>
+                                    <a href="planning.html"
+                                        class="block px-4 py-2 bg-black border-4 border-white md:text-black md:dark:border-black rounded-xl md:dark:bg-white md:hover:bg-blue-700 md:dark:hover:bg-blue-500 md:hover:scale-105">
+                                        <span class="text-white md:dark:text-black">Planning</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="fip.html"
+                                        class="block px-4 py-2 bg-black border-4 border-white md:text-black md:dark:border-black rounded-xl md:dark:bg-white md:hover:bg-blue-700 md:dark:hover:bg-blue-500 md:hover:scale-105">
+                                        <span class="text-white md:dark:text-black">FIP</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </li>
+                    <li>
+                        <a href="about.html"
+                            class="block py-2 px-3 text-gray-900 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  md:dark:hover:bg-transparent ">About</a>
+                    </li>
+                    <li>
+                        <a href="contact.html"
+                            class="block py-2 px-3 bg-blue-700 rounded md:bg-transparent md:text-blue-500 md:p-0 md:dark:text-blue-700 md:dark:bg-transparent">Contact</a>
+                    </li>
+                    <li>
+                        <button id="getStartedBtn"
+                            class="inline-flex justify-between items-center h-7 px-3 text-white bg-blue-700 rounded-full md:text-white md:dark:text-white dark:bg-blue-600 md:hover:bg-purple-700 hover:scale-105  transition-all duration-300 ease-in-out">Get
+                            Started</button>
+
+                        <button id="profile-icon-container"
+                            class="hidden relative justify-between items-center text-4xl right-2 text-black dark:text-white  hover:scale-105  transition-all duration-300 ease-in-out"><i class="fa fa-user-circle" aria-hidden="true"></i>
+
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  <div id="mobile" class="overflow-x-hidden">
+        <div id="mobile" class="">
+          <div id="mobileNav" class="md:hidden flex  flex-wrap items-center justify-between mx-auto p-4 w-full bg-black">
+            <a href="#" class="flex items-center cursor-pointer">
+                <!-- Logo -->
+                <img src="../resources/navbar/Sky Studios.png" class="h-6 ml-1 mr-4" alt="Sky Studios Logo" />
+                <span class="self-center text-xl font-semibold text-black whitespace-nowrap dark:text-white">Sky Studios</span>
+            </a>
+        
+            <!-- Mobile menu button with Font Awesome bars icon -->
+            <button id="mobileNavToggle" class="text-2xl text-black dark:text-white">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+        
+            <!-- Mobile Sidebar -->
+            <div id="sidebar" class="hidden absolute top-0 right-0 w-48 h-full transform translate-x-full transition-transform duration-300 ease-in-out shadow-lg rounded-lg z-50">
+                <div class="p-4 h-screen bg-gray-800 overflow-hidden">
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="home.html" class="block py-2 px-4 text-white hover:bg-gray-600 rounded-md transition-all duration-300 ease-in-out">Home</a>
+                        </li>
+                        <li>
+                            <a href="planning.html" class="block py-2 px-4 text-white hover:bg-gray-600 rounded-md transition-all duration-300 ease-in-out">Planning</a>
+                        </li>
+                        <li>
+                            <a href="fip.html" class="block py-2 px-4 text-white hover:bg-gray-600 rounded-md transition-all duration-300 ease-in-out">FIP</a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="block py-2 px-4 text-white hover:bg-gray-600 rounded-md transition-all duration-300 ease-in-out">About</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="block py-2 px-4 text-white hover:bg-gray-600 rounded-md transition-all duration-300 ease-in-out">Contact</a>
+                        </li>
+                        <li>
+                            <a href="fipBadges.html" class="block py-2 px-4 text-white hover:bg-gray-600 rounded-md transition-all duration-300 ease-in-out">Badges</a>
+                        </li>
+                        <li>
+                            <button id="mobileGetStartedBtn" class="block py-2 px-4 text-white bg-blue-700 rounded-full hover:bg-blue-800 transition-all duration-300 ease-in-out">Get Started</button>
+                        </li>
+
+                    </ul>
+                </div>
+              </div>
+          
+          </div>
+      
+        </div>
+
+    <main class="box-border mt-10 ml-20 mr-20 ">
+        <section class="relative min-h-screen p-20 flex justify-center items-center flex-col ">
+            <div class="headertxt max-w-3xl text-center">
+                <p class="text-4xl font-semibold text-black dark:text-white mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                    <span class="text-blue-500">GET</span> in touch with
+                    <span class="gradient-st" data-aos="flip-up" data-aos-duration="1500" data-aos-easing="ease-in-out">Sky Studios</span>: <br>
+                    <span>We're here to collaborate and create</span>
+                </p>
+            </div>
+            <div class="mt-16 flex flex-wrap justify-center">
+                <div class="contactInfo w-full md:w-1/2 bg-white shadow-md dark:bg-black p-8 mb-8 md:mb-0" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="linear">
+            
+                    <div class="flex items-start w-full mb-6 pt-10 justify-center">
+                        <div class="w-12 h-12 flex items-center justify-center shadow-md rounded-full flex-shrink-0">
+                            <span class="fa fa-map-marker text-gray-700 dark:text-gray-200 text-2xl"></span>
+                        </div>
+                        <div class="flex-1 text pl-3">
+                            <p class="text-gray-700 dark:text-gray-200 items-center"><span class="font-bold"></span>535 Clementi Road, Singapore 599489</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start w-full mb-6 justify-center items-center pt-6">
+                        <div class="w-12 h-12 flex items-center justify-center shadow-md rounded-full flex-shrink-0">
+                            <span class="fa fa-phone text-gray-700 dark:text-gray-200 text-2xl"></span>
+                        </div>
+                        <div class="flex-1 text pl-3">
+                            <p class="text-gray-700 dark:text-gray-200 items-center"><span class="font-bold"></span>+65 9681 5022</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start w-full mb-6 justify-center items-center pt-6">
+                        <div class="w-12 h-12 flex items-center justify-center shadow-md rounded-full flex-shrink-0">
+                            <span class="fa fa-paper-plane text-gray-700 dark:text-gray-200 text-xl"></span>
+                        </div>
+                        <div class="flex-1 text pl-3">
+                            <p class="text-gray-700 dark:text-gray-200 items-center"><span class="font-bold"></span>skystudios5757@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start w-full mb-6 justify-center items-center pt-6">
+                        <div class="w-12 h-12 flex items-center justify-center shadow-md rounded-full flex-shrink-0">
+                            <span class="fa fa-globe text-gray-700 dark:text-gray-200 text-2xl"></span>
+                        </div>
+                        <div class="flex-1 text pl-3">
+                            <p><span class="font-bold"></span> <a href="#" class="text-gray-700 dark:text-gray-200">skystudios.com</a></p>
+                        </div>
+                    </div>
+                    
+
+            
+                    <!-- Connect with us -->
+                    <h2 class="text-xl text-gray-700 dark:text-gray-200 mt-14 pl-1">Connect with us:</h2>
+                    <ul class="text-xl flex gap-4 mt-4 text-gray-700 dark:text-gray-200">
+                        <li><a href="#" class="flex items-center pl-1"><ion-icon name="logo-facebook" class="mr-2"></ion-icon></a></li>
+                        <li><a href="#" class="flex items-center pl-1"><ion-icon name="logo-twitter" class="mr-2"></ion-icon></a></li>
+                        <li><a href="#" class="flex items-center pl-1"><ion-icon name="logo-linkedin" class="mr-2"></ion-icon></a></li>
+                        <li><a href="#" class="flex items-center pl-1"><ion-icon name="logo-instagram" class="mr-2"></ion-icon></a></li>
+                    </ul>
+                </div>
+                <div class="contactForm w-full md:w-1/2" data-aos="fade-left" data-aos-duration="1000" data-aos-easing="linear">
+                    <form id="formContact"> <!-- Fix the typo here -->
+                        <h2 class="text-white">Send Message</h2>
+                        <div class="inputBox">
+                            <input type="text" name="full_name" required="required" class="text-gray-200">
+                            <span>Full Name</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" name="email" required="required" class="text-gray-200">
+                            <span>Email</span>
+                        </div>
+                        <div class="flex gap-10">
+                            <div class="w-1/2">
+                                <div class="inputBox">
+                                    <input type="text" name="phone" required="required" class="w-full text-gray-200">
+                                    <span>Phone Number</span>
+                                </div>
+                            </div>
+                            <div class="w-1/2">
+                                <div class="gender-box pt-5">
+                                    <label for="gender" class="block mb-1 text-gray-300">Gender</label>
+                                    <select id="gender" name="gender" required="required" class="w-full outline-none bg-transparent text-white">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="inputBox">
+                            <textarea name="message" required="required" class="text-gray-200"></textarea>
+                            <span>Type your Message...</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="submit" value="Send" id="contact-submit"> <!-- Added id for easier identification in JavaScript -->
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+            
+                    
+
+        </section>
+        
+        <div id="popup" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-75">
+            <!-- Loading Animation Container -->
+            <div id="loading-animation" class="flex items-center justify-center mb-4">
+                <dotlottie-player src="https://lottie.host/fe9af98f-3bae-449d-b0b5-0704d6a82912/AlH9eHG3wt.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+            </div>
+        
+            <!-- Modal Content -->
+            <div id="modal" class="hidden bg-white p-8 rounded-lg shadow-lg max-w-md">
+                <!-- Thanks Message -->
+                <h2 class="text-2xl font-bold mb-4">Thanks for contacting us!</h2>
+                <p class="text-lg mb-4">If you have more questions, please email us at <a href="mailto:skystudios5757@gmail.com" class="text-blue-500">skystudios5757@gmail.com</a>.</p>
+        
+                <!-- Close Button -->
+                <button id="closePopup" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none">Close</button>
+            </div>
+        </div>
+        
+        
+
+    </main>
+
+
+
+    <footer class="text-center p-4 md:mt-10 text-xs">
+        <p class="text-gray-800 hidden md:block dark:text-gray-200">
+          Copyright &copy; 2024 Sky Studios. All rights reserved.
+          
+          <a href="planning.html" class="text-gray-800 dark:text-gray-200 ml-20 mr-3">Planning</a>
+          |
+          <a href="FIP.html" class="text-gray-800 dark:text-gray-200 ml-3 mr-3">FIP</a>
+          |
+          <a href="about.html" class="text-gray-800 dark:text-gray-200 ml-3 mr-3">About Us</a>
+          |
+          <a href="contact.html" class="text-gray-800 dark:text-gray-200 ml-3 mr-3">Contact Us</a>
+          |
+          <a href="#" class="text-gray-800 dark:text-gray-200 ml-3" target="_blank">Sky Studios</a>
+        </p>
+    
+        <div class="flex flex-col items-center md:hidden">
+          <p class="text-gray-800 dark:text-gray-200 mt-2 mb-4">
+            Copyright &copy; 2024 Sky Studios. All rights reserved.
+          </p>
+        
+          <p class="text-gray-800 dark:text-gray-200">
+            <a href="planning.html" class="text-gray-800 dark:text-gray-200 ml-2 mr-2">Planning</a> |
+            <a href="FIP.html" class="text-gray-800 dark:text-gray-200 ml-2 mr-2">FIP</a> |
+            <a href="about.html" class="text-gray-800 dark:text-gray-200 ml-2 mr-2">About Us</a> |
+            <a href="contact.html" class="text-gray-800 dark:text-gray-200 ml-2 mr-2">Contact Us</a> |
+            <a href="#" class="text-gray-800 dark:text-gray-200 ml-2" target="_blank">Sky Studios</a>
+          </p>
+        </div>
+      </footer>
+ </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+</html>
+

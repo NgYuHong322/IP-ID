@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/signin.css">
+    <script src="../js/app.js" defer></script>
+	<script src="../js/signup.js" defer></script>
+	<link rel="icon" href="../resources/icon/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../resources/icon/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="../resources/icon/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../resources/icon/favicon-16x16.ico">
+
+  <!-- For Android devices -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../resources/icon/android-chrome-192x192.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="../resources/icon/android-chrome-512x512.ico">
+
+  <!-- For Apple devices -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../resources/icon/apple-touch-icon.ico">
+	<title>Signup</title>
+</head>
+<body>
+
+  <div class="hidden md:block">
+	<button onclick="goBack()" class="go-back-button">Back</button>
+
+	<div class="container w-max">
+		<form class="signup form">
+			<h2 class="headertxt text-white font-semibold text-3xl tracking-wide">Sign Up</h2>
+			<div class="inputBox">
+				<input type="text" name="username" required>
+				<i class="fa-regular fa-user"></i>
+				<span>username</span>
+			</div>
+			<div class="inputBox">
+				<input type="text" name="emailaddress" required>
+				<i class="fa-regular fa-envelope"></i>
+				<span>email address</span>
+			</div>
+			
+			<div class="inputBox">
+				<i class="fa-solid fa-lock hover:cursor-pointer" id="togglePassword"></i>
+				<input type="password" name="password" id="password" required>
+				<span>password</span>
+			</div>
+			  
+
+			<div class="inputBox">
+				<i class="fa-solid fa-lock hover:cursor-pointer" id="toggleConfirmPassword"></i>
+				<input type="password" name="confirmPassword" id="confirmPassword" required>
+				<span>confirm password</span>
+			</div>
+			<div id="passwordMismatchError" class="hidden text-red-500"></div>
+			<div id="usernameError" class="hidden text-red-500"></div>
+			<div id="emailError" class="hidden text-red-500"></div>
+			<div class="inputBox">
+				<input type="submit" value="Create Account">
+			</div>
+			<p>Already a member ? <a href="login.html" class="login">Log in</a></p>
+		</form>
+	</div>
+  </div>
+  <div class="block md:hidden font-sans bg-white dark:bg-black">
+    <div class="flex flex-col items-center justify-center h-screen">
+      <p class="text-lg text-center text-gray-800 dark:text-gray-200">
+        For the best experience, please download our app or use a desktop browser.
+      </p>
+      <button id="downloadapp" class="mt-4 px-6 py-3 bg-blue-600 text-white rounded-md">
+        Download App
+      </button>
+      <a href="home.html" class="mt-2 text-blue-600">Back to Home</a>
+    </div>
+</div>
+</body>
+</html>

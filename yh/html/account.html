@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/app.js" defer></script>
+  <script src="../js/account.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="icon" href="../resources/icon/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../resources/icon/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="../resources/icon/favicon-32x32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="../resources/icon/favicon-16x16.ico">
+
+  <!-- For Android devices -->
+  <link rel="icon" type="image/png" sizes="192x192" href="../resources/icon/android-chrome-192x192.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="../resources/icon/android-chrome-512x512.ico">
+
+  <!-- For Apple devices -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../resources/icon/apple-touch-icon.ico">
+  <title>My Account</title>
+
+</head>
+
+
+<body class="font-sans bg-white dark:bg-black">
+  <style>
+    .custom-width {
+        width: 41rem;
+    }
+
+
+
+    .no-spinner::-webkit-inner-spin-button,
+    .no-spinner::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .no-spinner {
+      -moz-appearance: textfield;
+    }
+
+  </style>
+  <div class="hidden md:block">
+    <nav class="maintxt">
+      <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="#" class="flex items-center space-x- rtl:space-x-reverse cursor-pointer">
+          <img src="../resources/navbar/Sky Studios.png" class="h-8 ml-3 mr-4" alt="Sky Studios Logo" />
+          <span class="self-center text-3xl font-semibold text-black whitespace-nowrap dark:text-white">Sky Studios</span>
+        </a>
+
+        <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
+          <ul class="flex flex-col relateive items-center font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md">
+            <li>
+              <a href="home.html" class="block py-2 px-3 text-gray-900 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  md:dark:hover:bg-transparent" aria-current="page">Home</a>
+            </li>
+            <li>
+              <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="flex items-center justify-between w-full py-2 px-3 md:text-black rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent md:hover:cursor-pointer" type="button">Features <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+              </button>
+
+              <!-- Dropdown menu -->
+              <div id="dropdownHover" class="block z-10 hidden bg-transparent divide-y divide-gray rounded-lg shadow md:w-44 md:dark:bg-gray">
+                <ul class="text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                  <li>
+                    <a href="planning.html" class="block px-4 py-2 bg-black border-4 border-white md:text-black md:dark:border-black rounded-xl md:dark:bg-white md:hover:bg-blue-700 md:dark:hover:bg-blue-500 md:hover:scale-105">
+                      <span class="text-white md:dark:text-black">Planning</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="fip.html" class="block px-4 py-2 bg-black border-4 border-white md:text-black md:dark:border-black rounded-xl md:dark:bg-white md:hover:bg-blue-700 md:dark:hover:bg-blue-500 md:hover:scale-105">
+                      <span class="text-white md:dark:text-black">FIP</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="about.html" class="block py-2 px-3 text-gray-900 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500  md:dark:hover:bg-transparent ">About</a>
+            </li>
+            <li>
+              <a href="contact.html" class="block py-2 px-3 text-gray-900 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 ">Contact</a>
+            </li>
+            <li>
+              <button id="getStartedBtn" class="inline-flex justify-between items-center h-7 px-3 text-white bg-blue-700 rounded-full md:text-white md:dark:text-white dark:bg-blue-600 md:hover:bg-purple-700 hover:scale-105  transition-all duration-300 ease-in-out">Get Started</button>
+              <button id="profile-icon-container"
+                class="hidden relative justify-between items-center text-4xl right-2 text-blue-500 dark:text-blue-700  hover:scale-105  transition-all duration-300 ease-in-out"><i class="fa fa-user-circle" aria-hidden="true"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <main class="pt-8 pl-8 pr-8 flex flex-col min-h-screen items-center">
+      <!-- Add a new section for the account information -->
+      <div class="w-full max-w-5xl mb-8">
+        <div class="flex justify-between items-center">
+          <div>
+            <!-- Display the username on the top left -->
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">Nimbus Wealth Account</h2>
+          </div>
+          <div class="flex items-center">
+            <button id="signOutButton" class="text-white font-bold bg-blue-700 hover:bg-blue-500 hover:text-black py-2 px-4 rounded hover:scale-105 transition-all duration-300 ease-in-out">
+              Sign Out
+            </button>
+          </div>
+        </div>
+        <hr class="mt-4 mx-auto border-t border-gray-300 dark:border-gray-700" />
+      
+        <div class="mt-9 flex">
+          <div class="flex-col w-1/2">
+            <!-- Left side content with slightly more width -->
+            <div class="mb-12">
+              <p id="welcomeMessage" class="text-2xl font-bold text-gray-900 dark:text-white"></p>
+              <p id="userEmail" class="text-xl text-gray-700 dark:text-gray-300"></p>
+            </div>
+      
+            <div class="flex flex-col items-start">
+              <!-- Buttons displayed vertically -->
+              <button id="account-info-btn" class="text-2xl font-semibold text-blue-700 dark:text-blue-500 transition-colors duration-300 mb-6">
+                Account
+              </button>
+              <button id="wallet-btn" class="text-2xl font-semibold text-gray-900 dark:text-gray-400 hover:text-blue-500 transition-colors duration-300 mb-6">
+                Wallet
+              </button>
+              <button id="fip-btn" class="text-2xl font-semibold text-gray-900 dark:text-gray-400 hover:text-blue-500 transition-colors duration-300 mb-6">
+                FIP
+              </button>
+            </div>
+          </div>
+      
+          <!-- Right side content -->
+          <!-- Account Information -->
+          <div id="account-information" class="flex-col mt-8">
+            <p class="text-2xl font-semibold mb-4 text-black dark:text-white">Account Information</p>
+            <p class="text-lg font mb-4 text-black dark:text-white">Manage your account here</p>
+        
+            <div id="account" class="flex">
+                <!-- Column 1 -->
+                <div class="flex flex-col gap-6">
+                    <!-- username -->
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md w-80 h-28 relative" data-section="username">
+                        <div id="username" class="ml-2 hover:cursor-pointer">
+                            <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Username</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1" id="usernameValue">username</p>
+                        </div>
+                    </div>
+        
+                    <!-- email -->
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md w-80 h-28 relative" data-section="email">
+                        <div id="email" class="ml-2 hover:cursor-pointer">
+                            <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Email</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1" id="emailValue">useremail</p>
+                        </div>
+                    </div>
+        
+                    <!-- currency -->
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md w-80 h-28 relative" data-section="currency">
+                        <div id="currency" class="ml-2 hover:cursor-pointer">
+                            <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Currency</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1" id="currencyValue">current currency will appear</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Column 2 -->
+                <div class="flex flex-col gap-6 pl-6">
+                    <!-- password -->
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md w-80 h-28 relative" data-section="password">
+                        <div id="password" class="ml-2 hover:cursor-pointer">
+                            <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Password</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1" id="passwordValue">********</p>
+                        </div>
+                    </div>
+        
+                    <!-- Date of Birth -->
+                    <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md w-80 h-28 relative" data-section="birth">
+                        <div id="birth" class="ml-2 hover:cursor-pointer">
+                            <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Date of Birth</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1" id="birthdateValue">Enter your birthdate here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+          <!-- Wallet -->
+          <div id="wallet" class="hidden flex-col mt-8 mb-20 mr-2">
+            <div class="flex justify-between items-center mb-4">
+              <div>
+                <p class="text-2xl font-semibold mb-4 text-black dark:text-white">Wallet</p>
+                <p class="text-lg font mb-4 text-black dark:text-white">Manage your wallet here</p>
+              </div>
+              <button id="addButton" class="text-2xl text-black dark:text-white hover:text-green-500 rounded-md focus:outline-none transition duration-300 ease-in-out transform hover:scale-110">
+                <i class="fa fa-plus-square mt-6 mr-1" aria-hidden="true"></i>
+              </button>          
+            </div>
+            <div class="custom-width">
+              <!-- Cash section -->
+              <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md h-max relative mb-6">
+                  <div class="flex justify-between mb-6">
+                      <div>
+                          <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Cash</p>
+                      </div>
+                      <div class="flex items-start">
+                        <!-- Total amount -->
+                        <p id="Amountcash" class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1 mr-4"></p>
+                        <button id="collapseBtnCash" class="text-blue-500 dark:text-blue-700 focus:outline-none">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                  </div>
+                  <div id="collapsibleContentcash" class="ml-2 mt-4">
+                
+                  </div>
+              </div>
+          
+              <!-- Cards section -->
+              <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md h-max relative mb-6">
+                <div class="flex justify-between mb-6">
+                    <div>
+                        <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Cards</p>
+                    </div>
+                    <div class="flex items-start">
+                      <!-- Total amount -->
+                      <p id="Amountcard" class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1 mr-4"></p>
+                      <button id="collapseBtnCards" class="text-blue-500 dark:text-blue-700 focus:outline-none">
+                          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                </div>
+                <div id="collapsibleContentcard" class="ml-2 mt-4">
+
+                </div>
+              </div>
+
+              <!-- Online Payment -->
+              <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md h-max relative mb-6">
+                <div class="flex justify-between mb-6">
+                    <div>
+                        <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Online Payment</p>
+                    </div>
+                    <div class="flex items-start">
+                      <!-- Total amount -->
+                      <p id="Amountpayment" class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1 mr-4"></p>
+                      <button id="collapseBtnOnline" class="text-blue-500 dark:text-blue-700 focus:outline-none">
+                          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                </div>
+                <div id="collapsibleContentpayment" class="ml-2 mt-4">
+                </div>
+              </div>
+
+              <!-- Stocks -->
+              <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md h-max relative mb-6">
+                <div class="flex justify-between mb-6">
+                    <div>
+                        <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Stocks</p>
+                    </div>
+                    <div class="flex items-start">
+                      <!-- Total amount -->
+                      <p  id="Amountstock" class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1 mr-4"></p>
+                      <button id="collapseBtnStocks" class="text-blue-500 dark:text-blue-700 focus:outline-none">
+                          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                </div>
+                <div id="collapsibleContentstock" class="ml-2 mt-4">
+                </div>
+              </div>
+
+              <!-- Recharge Cards -->
+              <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md h-max relative mb-6">
+                <div class="flex justify-between mb-6">
+                    <div>
+                        <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Recharge Cards</p>
+                    </div>
+                    <div class="flex items-start">
+                      <!-- Total amount -->
+                      <p id="Amountrecharge" class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1 mr-4"></p>
+                      <button id="collapseBtnRecharge" class="text-blue-500 dark:text-blue-700 focus:outline-none">
+                          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                </div>
+                <div id="collapsibleContentrecharge" class="ml-2 mt-4">
+                </div>
+              </div>
+
+              <!-- Loan -->
+              <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md h-max relative mb-6">
+                <div class="flex justify-between mb-6">
+                    <div>
+                        <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Loan</p>
+                    </div>
+                    <div class="flex items-start">
+                      <!-- Total amount -->
+                      <p id="Amountloan" class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1 mr-4"></p>
+                      <button id="collapseBtnLoan" class="text-blue-500 dark:text-blue-700 focus:outline-none">
+                          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                </div>
+                <div id="collapsibleContentloan" class="ml-2 mt-4">
+
+                </div>
+              </div>
+
+            </div>
+          
+            
+          </div>
+
+          
+          <!-- FIP -->
+          <div id="fip" class="hidden flex-col mt-8 pl-20">
+            <!-- Right side content with more width -->
+            <p class="text-2xl font-semibold mb-4 text-black dark:text-white">FIP</p>
+            <p class="text-lg font mb-4 text-black dark:text-white">Manage your account here</p>
+          
+            <div class="flex">
+              <!-- Column 1 -->
+              <div class="flex flex-col gap-6">
+
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md w-80 h-28 relative">
+                  <div id="rank" class="ml-2">
+                    <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">FIP rank</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1">current rank in fip will show the rank and badge</p>
+                  </div>
+                </div>
+      
+
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md w-80 h-28 relative">
+                  <div id="badges" class="ml-2">
+                    <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">FIP Badges</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1">Show all FIP Badges</p>
+                  </div>
+                </div>
+              </div>
+              
+      
+              <!-- Column 2 -->
+              <div class="flex flex-col gap-6 pl-6">
+
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md w-80 h-28 relative">
+                  <div id="FIPamount" class="ml-2">
+                    <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">FIP amount</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1">FIP total amount</p>
+                  </div>
+                </div>
+      
+                <div class="bg-white dark:bg-gray-800 p-4 rounded-md shadow-md w-80 h-28 relative">
+                  <div id="termination" class="ml-2">
+                    <p class="text-xl font-semibold text-gray-900 dark:text-white p-1">Account Termination</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1 pl-1">Delete all your FIP account and data</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>  
+
+        </div>
+      </div>
+
+      <!-- Sign Out popup -->
+      <div id="signOutModal" class="modal hidden fixed inset-0 z-50">
+        <div class="flex items-center justify-center h-screen">
+            <div class="bg-gray-700 dark:bg-white p-8 rounded-md shadow-md">
+                <p class="text-lg text-white dark:text-black mb-6">Are you sure you want to sign out?</p>
+                <div class="flex justify-end">
+                    <button id="confirmSignOut" class="bg-red-500 text-white px-4 py-2 mr-2 rounded-md focus:outline-none transition duration-300 ease-in-out transform hover:scale-110">
+                        Sign Out
+                    </button>
+                    <button id="cancelSignOut" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-md focus:outline-none transition duration-300 ease-in-out transform hover:scale-105">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      
+      <!-- Change information popup -->
+      <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md max-h-full">
+        <div class="relative p-4 w-full max-w-md max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-gray-800 rounded-lg shadow dark:bg-gray-700">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                    <h3 class="text-xl font-semibold text-white">
+                      Change Information
+                    </h3>
+                    <button id="close" type="button" class="end-2.5 text-gray-400 bg-transparent hover:bg-red-500 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="p-4 md:p-5">
+                    <form id="change-info-section" class="space-y-4" action="#" autocomplete="off">
+                        <div id="username" class="hidden">
+                            <label for="username" class="block mb-2 text-sm font-medium text-white">New username</label>
+                            <input type="username" name="username" id="username" class="bg-gray-200 dark:bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Enter your new username" autocomplete="username">
+                        </div>
+                        <div id="password" class="hidden">
+                            <!-- Old password -->
+                            <label for="oldpassword" class="block mb-2 text-sm font-medium text-white">Old password</label>
+                            <div class="relative">
+                              <input type="password" name="oldpassword" id="oldpassword" placeholder="Enter your old password" class="password-input bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" autocomplete="off">
+                              <span id="toggleOldPassword" class="toggle-password absolute text-gray-400 top-2 right-3 cursor-pointer">
+                                  <i class="fa fa-eye" aria-hidden="true"></i>
+                              </span>
+                            </div>                                                    
+                            <!-- New password -->
+                            <label for="newpassword" class="block mb-2 text-sm font-medium text-white">New password</label>
+                            <div class="relative">
+                              <input type="password" name="newpassword" id="newpassword" placeholder="Enter your new password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" autocomplete="off">
+                              <span id="toogleNewPassword" class="toggle-password absolute text-gray-400 top-2 right-3 cursor-pointer">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                              </span>
+                            </div>  
+
+                           <!-- Confirm password -->
+                           <label for="conpassword" class="block mb-2 text-sm font-medium text-white mt-2">Confirm password</label>
+                           <div class="relative">
+                               <input type="password" name="conpassword" id="conpassword" placeholder="Enter your new password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" autocomplete="off">
+                               <span id="toggleConPassword" class="toggle-password absolute text-gray-400 top-2 right-3 cursor-pointer">
+                                   <i class="fa fa-eye" aria-hidden="true"></i>
+                               </span>
+                           </div>
+                        </div>
+                        <div id="email" class="hidden">
+                          <label for="email" class="block mb-2 text-sm font-medium text-white">New email</label>
+                          <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Enter your new email" autocomplete="off" >
+                        </div>
+                        <div id="birth" class="hidden">
+                          <label for="birthdate" class="block mb-2 text-sm font-medium text-white">Birthdate</label>
+                          <input type="date" name="birthdate" id="birthdate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" autocomplete="off">
+                        </div>
+                        <div id="currency" class="hidden">
+                          <label for="currency" class="block mb-2 text-sm font-medium text-white">Select Currency:</label>
+                          <select id="currency" name="currency" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" autocomplete="off">
+                              <option value="sgd">SGD</option>
+                              <option value="myr">MYR</option>
+                          </select>
+                        </div>
+                        <div id="update">
+                          <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-4">Update</button>
+                        </div>
+                        <div id="error-message" class="text-red-500 mt-2 hidden"></div>
+                    </form>
+
+                  </div>
+            </div>
+        </div>
+      </div>
+
+      <div id="addWalletItemModal" class="hidden overflow-y-auto overflow-x-hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 w-10/12 max-w-md max-h-full">
+        <form id="walletmodal" class="wallet-content bg-gray-800 dark:bg-gray-700 p-10 rounded-md shadow-md relative">
+          
+          <button id="closeAccModalButton" class="absolute top-4 left-3 text-gray-100 dark:text-gray-200 hover:text-red-700 hover:scale-110 font-bold py-1 px-2 rounded transition duration-300 ease-in-out">
+            <i class="fa fa-times mr-1"></i>
+          </button>
+
+
+          <!-- Add Item button with tick icon on top right -->
+          <button type="submit" id="addItemButton" class="absolute top-4 right-3 text-gray-100 dark:text-gray-200 hover:text-green-500 hover:scale-110 font-bold py-1 px-2 rounded transition duration-300 ease-in-out">
+              <i class="fa fa-check"></i>
+          </button>
+      
+
+          <div class="pb-6 mt-10 text-gray-100 dark:text-gray-100">
+            <span class="font-bold text-xl">Add Account</span>
+
+            <div class="pb-4 mt-6 flex justify-between items-center">
+                <label for="walletItemType" class="w-1/4">Type</label>
+                <select id="walletItemType" name="walletItemType" class="bg-transparent w-1/2 text-right hover:cursor-pointer">
+                    <option value="cash">Cash</option>
+                    <option value="card">Card</option>
+                    <option value="payment">Online Payment</option>
+                    <option value="stock">Stock</option>
+                    <option value="recharge">Recharge Card</option>
+                    <option value="loan">Loan</option>
+                </select>
+            </div>
+        
+            <hr class="mb-4 border-t-2 border-gray-100">
+        
+            <div class="pb-4 flex justify-between items-center">
+                <label for="name" class="w-1/4">Name</label>
+                <input type="text" name="name" id="name" class="bg-transparent text-black dark:text-white w-full text-right" placeholder="Enter a name, symbol for stocks" required>
+            </div>
+        
+            <hr class="mb-4 border-t-2 border-gray-100">
+        
+            <div class="pb-4 flex justify-between items-center">
+                <label for="amount" class="w-1/4">Amount</label>
+                <input type="number" name="amount" id="amount" class="no-spinner bg-transparent dark:text-white text-black w-1/4 text-right appearance-none" placeholder="0.00" required>
+            </div>
+        
+            <hr class="mb-4 border-t-2 border-gray-100">
+        
+            <div class="flex justify-between items-center">
+                <label for="currencywallet" class="w-1/4">Currency</label>
+                <select id="currencywallet" name="currencywallet" class="bg-transparent w-1/4 text-right">
+                  <option value="sgd">SGD</option>
+                  <option value="myt">MYR</option>
+                </select>
+            </div>
+          </div>
+          <div id="errorMessageWallet" class="text-red-500 hidden">Name already in use. Please try a different one.</div>
+
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <div class="block md:hidden font-sans bg-white dark:bg-black">
+    <div class="flex flex-col items-center justify-center h-screen">
+      <p class="text-lg text-center text-gray-800 dark:text-gray-200">
+        For the best experience, please download our app or use a desktop browser.
+      </p>
+      <button class="mt-4 px-6 py-3 bg-blue-600 text-white rounded-md">
+        Download App
+      </button>
+      <a href="home.html" class="mt-2 text-blue-600">Back to Home</a>
+    </div>
+  </div>
+
+    <footer class="text-center p-4 text-xs">
+        <p class="text-gray-800 hidden md:block dark:text-gray-200">
+          Copyright &copy; 2024 Sky Studios. All rights reserved.
+          
+          <a href="planning.html" class="text-gray-800 dark:text-gray-200 ml-20 mr-3">Planning</a>
+          |
+          <a href="FIP.html" class="text-gray-800 dark:text-gray-200 ml-3 mr-3">FIP</a>
+          |
+          <a href="about.html" class="text-gray-800 dark:text-gray-200 ml-3 mr-3">About Us</a>
+          |
+          <a href="contact.html" class="text-gray-800 dark:text-gray-200 ml-3 mr-3">Contact Us</a>
+          |
+          <a href="#" class="text-gray-800 dark:text-gray-200 ml-3" target="_blank">Sky Studios</a>
+        </p>
+    
+        <div class="flex flex-col items-center md:hidden">
+          <p class="text-gray-800 dark:text-gray-200 mt-2 mb-4">
+            Copyright &copy; 2024 Sky Studios. All rights reserved.
+          </p>
+        
+          <p class="text-gray-800 dark:text-gray-200">
+            <a href="planning.html" class="text-gray-800 dark:text-gray-200 ml-2 mr-2">Planning</a> |
+            <a href="FIP.html" class="text-gray-800 dark:text-gray-200 ml-2 mr-2">FIP</a> |
+            <a href="about.html" class="text-gray-800 dark:text-gray-200 ml-2 mr-2">About Us</a> |
+            <a href="contact.html" class="text-gray-800 dark:text-gray-200 ml-2 mr-2">Contact Us</a> |
+            <a href="#" class="text-gray-800 dark:text-gray-200 ml-2" target="_blank">Sky Studios</a>
+          </p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+</html>
